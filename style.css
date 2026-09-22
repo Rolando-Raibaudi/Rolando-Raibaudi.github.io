@@ -1,0 +1,358 @@
+/* --- VARIABLES Y CONFIGURACIÓN GENERAL --- */
+:root {
+    --bg-color: #0f1115;
+    --bg-alt: #161920;
+    --card-bg: #1e222d;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #0284c7;
+    --border: #2e3545;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- SECCIONES --- */
+.section {
+    padding: 70px 0;
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #ffffff;
+    position: relative;
+}
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: var(--accent);
+        margin-top: 8px;
+        border-radius: 2px;
+    }
+
+/* --- HERO / PERFIL --- */
+.hero {
+    padding: 80px 0 60px;
+    background-color: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-img-wrapper {
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.hero-text h2 {
+    font-size: 1.25rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.hero-text .bio {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* --- BOTONES --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: #0f1115;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+    .btn:hover {
+        background-color: var(--accent-hover);
+        color: #ffffff;
+    }
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+    .btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+/* --- PROYECTOS Y GALERÍA --- */
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.project-info h4 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.project-info .tagline {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.project-info .role {
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.project-info p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+    .project-gallery img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+        .project-gallery img:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+
+/* --- EXPERIENCIA LABORAL --- */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.timeline-item {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+.timeline-header h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.timeline-header .company {
+    display: block;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.timeline-header .date {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+/* --- RECOMENDACIÓN --- */
+.testimonial-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 35px;
+    position: relative;
+}
+
+    .testimonial-card .quote {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--text-main);
+        margin-bottom: 20px;
+    }
+
+    .testimonial-card cite {
+        display: block;
+        font-style: normal;
+    }
+
+        .testimonial-card cite strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .testimonial-card cite span {
+            display: block;
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-card cite .subtext {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+/* --- FOOTER Y EDUCACIÓN --- */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 50px 0 20px;
+}
+
+.education h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.education ul {
+    list-style: none;
+}
+
+.education li {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE (MÓVILES) --- */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info {
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .project-gallery img {
+        height: 180px;
+    }
+}
+/* --- DESPLEGABLE DE CARTA COMPLETA --- */
+.full-letter {
+    margin: 15px 0 25px;
+    background-color: var(--bg-alt);
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+}
+
+    .full-letter summary {
+        cursor: pointer;
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+        .full-letter summary:hover {
+            text-decoration: underline;
+        }
+
+.letter-content {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    font-style: normal;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+    .letter-content p {
+        margin-bottom: 12px;
+    }
+.letter-signature {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    color: var(--text-main);
+}
+
+.contact-verify {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-top: 6px;
+    font-weight: 500;
+}
